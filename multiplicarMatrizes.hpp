@@ -4,5 +4,17 @@
 
 void obterMultiplicacaoDeMatrizes()
 {
+    int NumeroLinhasMatriz1;
+    int NumeroColunasMatriz1;
+    int NumeroLinhasMatriz2;
+    int NumeroLinhasMatriz2;
 
+    cout << "Digite a ordem da primeira matriz: " << endl;
+    cin >> NumeroLinhasMatriz1 >> NumeroColunasMatriz1;
+    cout << "Digite a ordem da segunda matriz: " << endl;
+    cin >> NumeroLinhasMatriz2 >> NumeroLinhasMatriz2;
+
+    double Matriz1[NumeroLinhasMatriz1][NumeroColunasMatriz1];
+    double Matriz2[NumeroLinhasMatriz2][NumeroLinhasMatriz2];
 }
+#endif
