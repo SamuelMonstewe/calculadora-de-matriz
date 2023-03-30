@@ -1,6 +1,7 @@
 #include <iostream>
 #include "somaMatrizes.hpp"
 #include "subtrairMatrizes.hpp"
+#include "multiplicarMatrizes.hpp"
 using namespace std;
 
 int main()
@@ -12,7 +13,10 @@ int main()
 
     if (OperacaoDesejada == '+')
         obterSomaDeDuasMatrizes();
-    if(OperacaoDesejada == '-')
-        ObterSubtracaoDeMatrizes();
-    
+    else if(OperacaoDesejada == '-')
+        obterSubtracaoDeMatrizes();
+    else if(OperacaoDesejada == '*')
+        obterMultiplicacaoDeMatrizes();
+
+ system("pause");   
 }
