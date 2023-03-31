@@ -34,3 +34,31 @@ void obterDeterminanteDoisPorDois()
     Determinante = ResultadoMultiplicacaoDiagonalPrincipal - ResultadoMultiplicacaoDiagonalSecundaria;
     cout << "O resultado deste determinante e: " << Determinante << endl;
 }
+void obterDeterminanteTresPorTres()
+{
+    double MatrizDeEntrada[3][3];
+    double DuasPrimeirasColunas[3][2];
+    double CalcularDeterminante[5][3];
+    double Elemento;
+
+    cout << "Preencha a matriz para calcularmos o determinante: " << endl;
+
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            cout << "Digite o elemento A" << i << j << ": " << endl;  
+            cin >> Elemento;
+            MatrizDeEntrada[i][j] = Elemento;  
+        }
+    }
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 2; j++)
+        {
+            DuasPrimeirasColunas[i][j] = MatrizDeEntrada[i][j];
+        }    
+    }
+   
+
+}
