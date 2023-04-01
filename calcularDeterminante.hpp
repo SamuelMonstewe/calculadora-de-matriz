@@ -3,11 +3,11 @@ using namespace std;
 
 void obterDeterminanteDoisPorDois()
 {
-    double Matriz[2][2] = {0};
-    double ResultadoMultiplicacaoDiagonalPrincipal = 1;
-    double ResultadoMultiplicacaoDiagonalSecundaria = 1;
-    double Determinante = 0;
-    double Elemento;
+    int Matriz[2][2] = {0};
+    int ResultadoMultiplicacaoDiagonalPrincipal = 1;
+    int ResultadoMultiplicacaoDiagonalSecundaria = 1;
+    int Determinante = 0;
+    int Elemento;
     cout << "Preencha a matriz para fazermos o determinante: " << endl;
 
     for(int i = 0; i < 2; i++)
@@ -36,11 +36,12 @@ void obterDeterminanteDoisPorDois()
 }
 void obterDeterminanteTresPorTres()
 {
-    double MatrizDeEntrada[3][3];
-    double DuasPrimeirasColunas[3][2];
-    double CalcularDeterminante[5][3];
-    double Elemento;
-
+    int MatrizDeEntrada[3][3];
+    int DuasPrimeirasColunas[3][2];
+    int MultiplicacaoDiagonalPrincipal = 1;
+    int CalcularDeterminante[3][5];
+    int Elemento;
+    int Determinante = 0;
     cout << "Preencha a matriz para calcularmos o determinante: " << endl;
 
     for(int i = 0; i < 3; i++)
@@ -52,13 +53,46 @@ void obterDeterminanteTresPorTres()
             MatrizDeEntrada[i][j] = Elemento;  
         }
     }
+
+  
+
     for(int i = 0; i < 3; i++)
     {
         for(int j = 0; j < 2; j++)
         {
-            DuasPrimeirasColunas[i][j] = MatrizDeEntrada[i][j];
+            DuasPrimeirasColunas[i][j] = MatrizDeEntrada[i][j]; 
         }    
     }
-   
+
+
+
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            CalcularDeterminante[i][j] = MatrizDeEntrada[i][j];
+        }
+    }
+
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 3; j < 5; j++)
+        {
+            for(int k = 0; k < 2; k++)
+            {
+                CalcularDeterminante[i][j] = DuasPrimeirasColunas[i][k];
+                j++;
+            }
+        }
+    }
+
+   for(int i = 0; i < 3; i++)
+   {
+       for(int j = 0; j < 5; j++)
+       {
+         cout <<  CalcularDeterminante[i][j] << "\t";   //erro   
+       }
+       cout << "\n";
+   }
 
 }
