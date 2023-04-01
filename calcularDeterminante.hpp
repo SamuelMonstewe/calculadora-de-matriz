@@ -38,9 +38,17 @@ void obterDeterminanteTresPorTres()
 {
     int MatrizDeEntrada[3][3];
     int DuasPrimeirasColunas[3][2];
+    
     int MultiplicacaoDiagonalPrincipal = 1;
     int MultiplicacaoPrimeiraParalelaPrincipal = 1;
     int MultiplicacaoSegundaParalelaPrincipal = 1;
+    int SomaDasMultiplicacoesDiagonaisPrincipalEParalelas = 0;
+
+    int MultiplicacaoDiagonalSecundaria = 1;
+    int MultiplicacaoPrimeiraParalelaSecundaria = 1;
+    int MultiplicacaoSegundaParalelaSecundaria = 1;
+    int SomaDasMultiplicacoesDiagonaisSecundariasEParalelas = 0;
+
     int CalcularDeterminante[3][5];
     int Elemento;
     int Determinante = 0;
@@ -103,23 +111,34 @@ void obterDeterminanteTresPorTres()
    {
        for(int j = 0; j < 5; j++)
        {
-           if(i == j)
-           {
+           if(i == j) 
                MultiplicacaoDiagonalPrincipal *= CalcularDeterminante[i][j];
-               
-           }
            else if(j - i == 1)
-           {
                MultiplicacaoPrimeiraParalelaPrincipal *= CalcularDeterminante[i][j];
-           }
            else if(j - i == 2)
-           {
                MultiplicacaoSegundaParalelaPrincipal *= CalcularDeterminante[i][j];
-           }
-
        }    
    }
+
+   SomaDasMultiplicacoesDiagonaisPrincipalEParalelas = MultiplicacaoDiagonalPrincipal + MultiplicacaoPrimeiraParalelaPrincipal + MultiplicacaoSegundaParalelaPrincipal;
     
+   for(int i = 0; i < 3; i++)
+   {
+       for(int j = 0; j < 5; j++)
+       {
+           if(i + j == 2)
+               MultiplicacaoDiagonalSecundaria *= CalcularDeterminante[i][j];
+           else if(i + j == 3)
+               MultiplicacaoPrimeiraParalelaSecundaria *= CalcularDeterminante[i][j];
+           else if(i + j == 4)
+               MultiplicacaoSegundaParalelaSecundaria *= CalcularDeterminante[i][j];
+           
+       }
+   }
     
+    SomaDasMultiplicacoesDiagonaisSecundariasEParalelas = MultiplicacaoDiagonalSecundaria + MultiplicacaoPrimeiraParalelaSecundaria + MultiplicacaoSegundaParalelaSecundaria;
+
+    Determinante = SomaDasMultiplicacoesDiagonaisPrincipalEParalelas - SomaDasMultiplicacoesDiagonaisSecundariasEParalelas;
+    cout << "Resultado: " << Determinante << endl;
 
 }
