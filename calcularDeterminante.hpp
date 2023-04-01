@@ -39,6 +39,8 @@ void obterDeterminanteTresPorTres()
     int MatrizDeEntrada[3][3];
     int DuasPrimeirasColunas[3][2];
     int MultiplicacaoDiagonalPrincipal = 1;
+    int MultiplicacaoPrimeiraParalelaPrincipal = 1;
+    int MultiplicacaoSegundaParalelaPrincipal = 1;
     int CalcularDeterminante[3][5];
     int Elemento;
     int Determinante = 0;
@@ -76,7 +78,7 @@ void obterDeterminanteTresPorTres()
 
     for(int i = 0; i < 3; i++)
     {
-        for(int j = 3; j < 5; j++)
+        for(int j = 3; j < 5;)
         {
             for(int k = 0; k < 2; k++)
             {
@@ -90,9 +92,34 @@ void obterDeterminanteTresPorTres()
    {
        for(int j = 0; j < 5; j++)
        {
-         cout <<  CalcularDeterminante[i][j] << "\t";   //erro   
+         cout <<  CalcularDeterminante[i][j] << "\t";   
        }
        cout << "\n";
    }
+
+   cout << "-----------------------------------------------" << endl;
+
+   for(int i = 0; i < 3; i++)
+   {
+       for(int j = 0; j < 5; j++)
+       {
+           if(i == j)
+           {
+               MultiplicacaoDiagonalPrincipal *= CalcularDeterminante[i][j];
+               
+           }
+           else if(j - i == 1)
+           {
+               MultiplicacaoPrimeiraParalelaPrincipal *= CalcularDeterminante[i][j];
+           }
+           else if(j - i == 2)
+           {
+               MultiplicacaoSegundaParalelaPrincipal *= CalcularDeterminante[i][j];
+           }
+
+       }    
+   }
+    
+    
 
 }
