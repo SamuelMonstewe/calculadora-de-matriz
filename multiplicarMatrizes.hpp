@@ -9,7 +9,6 @@ void obterMultiplicacaoDeMatrizes()
     int NumeroColunasMatriz1;
     int NumeroLinhasMatriz2;
     int NumeroColunasMatriz2;
-    int ResultadoMultiplicacaoDeDoisElementos = 0;
     double Elemento;
 
     cout << "Digite a ordem da primeira matriz: " << endl;
@@ -57,7 +56,7 @@ void obterMultiplicacaoDeMatrizes()
                 }
             }
         }
-
+        cout << "Resultado: " << endl;
         for(int i = 0; i < NumeroLinhasMatriz1; i++)
         {
             for(int j = 0; j < NumeroColunasMatriz2; j++)
