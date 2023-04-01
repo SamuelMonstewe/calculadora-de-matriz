@@ -3,5 +3,6 @@
 * `somaMatrizes.hpp` contém o arquivo com a adição de matrizes;
 * `subtrairMatrizes.hpp` contém o arquivo com a subtração de matrizes;
 * `multiplicarMatrizes.hpp` contém o arquivo com a subtração de matrizes.
+* `calcularDeterminante.hpp` contém o arquivo que encontra o determinante de uma matriz 2x2 ou 3x3
 
 Espero que goste deste repositório 😀
