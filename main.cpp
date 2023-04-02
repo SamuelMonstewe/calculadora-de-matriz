@@ -1,8 +1,8 @@
 #include <iostream>
-#include "somaMatrizes.hpp"
-#include "subtrairMatrizes.hpp"
-#include "multiplicarMatrizes.hpp"
-#include "calcularDeterminante.hpp"
+#include "header_files/somaMatrizes.hpp"
+#include "header_files/subtrairMatrizes.hpp"
+#include "header_files/multiplicarMatrizes.hpp"
+#include "header_files/calcularDeterminante.hpp"
 using namespace std;
 
 int main()
